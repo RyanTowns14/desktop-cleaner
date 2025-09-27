@@ -5,15 +5,6 @@ import uuid
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
-FILE_TYPES = {
-    "Images": [".png", ".jpg", ".gif"],
-    "Documents": [".pdf", ".docx", ".txt", ".pptx"],
-    "Videos": [".mp4", ".mov"],
-    "Archives": [".zip", ".rar"],
-    "Audio": [".mp3", ".wav"]
-}
-
-
 def move_file(file_path, folder_path):
     if os.path.isfile(file_path):
         extension = os.path.splitext(file_path)[1].lower()
